@@ -26,11 +26,12 @@
       dry_run_default: true,
       run_state: { running: false, live: false },
       gemini_health: { ok: true, last_checked: now.toISOString(), error: null },
+      gemini_limit_bypass: false, // ponytail: mirrors /api/status shape so the demo renders the bypass banner path
       is_admin: false,
       needs_credentials: false,
       admin_users: []
     },
-    config: { search: { slugs: ["python-jobs", "ai-ml-jobs", "data-scientist-jobs"], per_type_jobs: 20, max_jobs_global: 50, max_pages_per_type: 5, max_run_types: 3 }, browser: { profile_path: "", binary: "" }, apply: { dry_run: true }, gemini: { model: "gemini-2.5-flash", daily_call_limit: 19 }, resume_curation: { match_threshold: 0.5, gemini_daily_limit: 50 }, rag: { daily_call_limit: 50 } },
+    config: { search: { slugs: ["python-jobs", "ai-ml-jobs", "data-scientist-jobs"], per_type_jobs: 20, max_jobs_global: 50, max_pages_per_type: 5, max_run_types: 3 }, job_roles: [{ label: "Python Developer", slug: "python-jobs" }, { label: "AI / ML Engineer", slug: "ai-ml-jobs" }, { label: "Data Scientist", slug: "data-scientist-jobs" }], browser: { profile_path: "", binary: "" }, apply: { dry_run: true }, gemini: { model: "gemini-2.5-flash", daily_call_limit: 19 }, resume_curation: { match_threshold: 0.5, gemini_daily_limit: 50 }, rag: { daily_call_limit: 50 } },
     timezone: { timezone: "Asia/Kolkata", locked: true, locked_at: today + "T00:00:00+05:30" },
     reports: [
       { run_id: "20260829_153446", kind: "visit", filename: "visit_20260829_153446.json", modified_at: Date.now() / 1000 - 3600 },
